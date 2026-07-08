@@ -104,3 +104,34 @@ document.body.style.opacity="1";
 },100);
 
 });
+function sendWhatsApp(){
+
+let selected=[];
+
+document.querySelectorAll('.service-select input[type="checkbox"]:checked')
+.forEach(item=>{
+
+selected.push("✅ "+item.value);
+
+});
+
+if(selected.length===0){
+
+alert("Please select at least one service.");
+
+return;
+
+}
+
+let message="Hello Sara Khan,%0A%0AI am interested in the following services:%0A%0A";
+
+message+=selected.join("%0A");
+
+message+="%0A%0APlease contact me.";
+
+window.open(
+"https://wa.me/918770380233?text="+message,
+"_blank"
+);
+
+}
